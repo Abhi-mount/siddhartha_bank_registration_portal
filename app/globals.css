@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-brand-50 text-ink antialiased;
+}
+
+::selection {
+  @apply bg-brand-300 text-ink;
+}
+
+@layer components {
+  .field-label {
+    @apply mb-2 block text-sm font-semibold text-ink;
+  }
+
+  .field-input {
+    @apply w-full rounded-xl border border-ink/10 bg-white px-4 py-3.5 text-[15px] text-ink shadow-sm outline-none transition placeholder:text-ink-soft/80 focus:border-brand-500 focus:ring-4 focus:ring-brand-200/70 disabled:cursor-not-allowed disabled:bg-brand-50;
+  }
+
+  .field-input-error {
+    @apply border-red-400 focus:border-red-500 focus:ring-red-100;
+  }
+
+  .field-error {
+    @apply mt-2 flex items-center gap-1.5 text-xs font-medium text-red-600;
+  }
+
+  .btn-primary {
+    @apply inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-5 py-3.5 text-[15px] font-bold text-ink shadow-soft transition hover:bg-brand-400 focus:outline-none focus:ring-4 focus:ring-brand-200 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-ink/10 bg-white px-5 py-3 text-sm font-semibold text-ink transition hover:border-brand-300 hover:bg-brand-50 focus:outline-none focus:ring-4 focus:ring-brand-200;
+  }
+}
